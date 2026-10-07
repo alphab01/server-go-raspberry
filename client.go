@@ -17,4 +17,14 @@ func main() {
     fmt.Println(err)
   }
   fmt.Printf("%s\n", d)
+  r2, err := http.Get("http://192.168.3.19:8080/hi")
+  if (err != nil) {
+    fmt.Println(err)
+  }
+  defer r2.Body.Close()
+  d2, err := io.ReadAll(r2.Body)
+  if (err != nil) {
+    fmt.Println(err)
+  }
+  fmt.Printf("%s\n", d2)
 }
