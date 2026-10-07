@@ -11,4 +11,10 @@ func main() {
   if (err != nil) {
     fmt.Println(err)
   }
+  defer r.Body.Close()
+  d, err := io.ReadAll(r.Body)
+  if (err != nil) {
+    fmt.Println(err)
+  }
+  fmt.Printf("%s\n", d)
 }
