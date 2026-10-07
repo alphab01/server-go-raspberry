@@ -14,7 +14,7 @@ func h(w http.ResponseWriter, r *http.Request) {
 
 func h2(w http.ResponseWriter, r *http.Request) {
   if (r.Method == "GET") {
-    fmt.Printn("get2")
+    fmt.Println("get2")
     w.Write([]byte("hello"))
   }
 }
